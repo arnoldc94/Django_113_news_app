@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+<title>{% block title %}Enjoy This Post{% endblock title %}</title>
+{% block content %}
+<div class="detail-container" style="width:700px; height: 400px;" >
+
+        <div class="card-container" style="width:650px; ">
+            <div class="detail-header">
+                <h1 >{{ article.title }}</h1>
+                <h5>{{ article.date }}</h5>
+                <h2><span>Author: </span> {{ article.author }}</h2>
+                <a href="{% url 'article_delete' article.id %}" class="btn">Delete</a>
+                <a href="{% url 'article_edit' article.id %}" class="btn">Edit</a>
+            </div>
+            <div class="detail-par" style="width:650px; ">
+                <p> {{ article.body }} </p>
+            </div>
+        </div>
+    
+</div>
+    
+{% endblock content %}
