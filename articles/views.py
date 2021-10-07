@@ -21,14 +21,10 @@ class ArticleDetailView(LoginRequiredMixin, DetailView):
 class ArticleCreateView( LoginRequiredMixin, UserPassesTestMixin, CreateView):
     model = Article
     template_name = "article_new.html"
-    fields = ["title", "author", "body", ]
+    fields = ["title", "author", "body",  ]
     
     def test_func(self):
         return self.request.user.is_staff or self.request.user.is_superuser
-
-    def form_valid(self, form):
-        form.instance.author = self.request.user
-        return super().form_valid(form)
 
 class ArticleUpdateView( LoginRequiredMixin, UserPassesTestMixin, UpdateView):
     model = Article

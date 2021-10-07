@@ -18,9 +18,10 @@
                     </div>
                     <div class="links">
                         <a href="{% url 'article_detail' article.id %}" class="btn">Read</a>
-                        
+                        {% if request.user == article.author or user.is_staff or user.is_superuser %}
                         <a href="{% url 'article_delete' article.id %}" class="btn">Delete</a>
                         <a href="{% url 'article_edit' article.id %}" class="btn">Edit</a>
+                        {% endif %}
                     </div>
                 </div>
             </div>
