@@ -10,7 +10,7 @@ from .views import (
 
 
 urlpatterns = [
-    path('', 
+    path('articles', 
     ArticleListView.as_view(), 
     name="home"),
 
