@@ -1,0 +1,14 @@
+.main_home {
+    text-align: center;
+    padding-top: 50px;
+}
+
+.main_home a {
+    text-decoration: none;
+    color: lightsalmon;
+}
+
+.main_home h4 {
+    border-top: 1px solid black;
+    padding-top: 30px;
+}
